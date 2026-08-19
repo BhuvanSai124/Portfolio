@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Bhuvan Sai | AI/ML & Data Science Developer</title>
+  <meta name="title" content="Bhuvan Sai | AI/ML & Data Science Developer">
+  <meta name="description" content="Personal developer portfolio of Chintalapati Bhuvan Sai — B.Tech Computer Science student specializing in AI, Machine Learning, Data Science, and Full-Stack Agentic AI applications.">
+  <meta name="keywords" content="Bhuvan Sai, Chintalapati Bhuvan Sai, AI ML Developer, Data Science, Full Stack Developer, Agentic AI, FastAPI, React, Python, RMD Engineering College">
+  <meta name="author" content="Chintalapati Bhuvan Sai">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bhuvan Sai | AI/ML & Data Science Developer">
+  <meta property="og:description" content="Portfolio of Bhuvan Sai — Computer Science student building AI, Machine Learning, Data Science and full-stack applications.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Design Tokens — Pure Black & Silver Monochrome Aesthetic */
+    :root {
+      --bg-primary: #000000; /* Pure Deep Black */
+      --bg-secondary: #0a0a0a; /* Dark Secondary Layer */
+      --bg-tertiary: #141414; /* Dark Card Inner */
+      --bg-card: rgba(16, 16, 16, 0.95);
+      
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      
+      --accent-primary: #ffffff; /* Crisp Silver/White Accent */
+      --accent-hover: #e4e4e7;
+      --accent-soft: rgba(255, 255, 255, 0.08);
+      --accent-border: rgba(255, 255, 255, 0.25);
+      
+      --border-subtle: #222222;
+      --border-strong: #333333;
+      
+      --code-bg: #050505;
+      --code-text: #f4f4f5;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.6);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.7);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8);
+      --shadow-glow: 0 0 25px rgba(255, 255, 255, 0.12);
+
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-tertiary: #f1f5f9;
+      --bg-card: rgba(255, 255, 255, 0.95);
+      
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      
+      --accent-primary: #0f172a;
+      --accent-hover: #1e293b;
+      --accent-soft: rgba(15, 23, 42, 0.08);
+      --accent-border: rgba(15, 23, 42, 0.25);
+      
+      --border-subtle: #e2e8f0;
+      --border-strong: #cbd5e1;
+      
+      --code-bg: #1e293b;
+      --code-text: #f8fafc;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-glow: 0 0 20px rgba(15, 23, 42, 0.12);
+    }
+
+    /* Reset & Global Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background-color var(--transition-slow), color var(--transition-slow);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
+
+    /* Layout Helpers */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-padding { padding: 4.5rem 0; }
+    @media (max-width: 768px) { .section-padding { padding: 3rem 0; } }
+
+    h1, h2, h3, h4 { color: var(--text-primary); font-weight: 700; line-height: 1.25; letter-spacing: -0.02em; }
+    p { color: var(--text-secondary); }
+    a { color: inherit; text-decoration: none; }
+    .font-mono { font-family: var(--font-mono); }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+
+    @media (max-width: 1024px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+    /* Header Brand Dynamic Fire Burst Hover Effect */
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      position: relative;
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.6rem;
+      border: 1px solid transparent;
+      transition: all var(--transition-normal);
+      cursor: pointer;
+    }
+
+    .brand-link:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent-border);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+
+    .brand-link:hover .brand-text {
+      background: linear-gradient(110deg, var(--text-primary) 0%, var(--text-secondary) 30%, var(--text-primary) 50%, var(--text-muted) 75%, var(--text-primary) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: silverShimmer 2s linear infinite;
+      text-shadow: 0 0 14px rgba(255, 255, 255, 0.8);
+    }
+
+    .brand-link:hover .brand-logo-badge {
+      border-color: var(--text-primary) !important;
+      box-shadow: 0 0 16px rgba(255, 255, 255, 0.8) !important;
+      transform: scale(1.08);
+    }
+
+    @keyframes silverShimmer {
+      to { background-position: 200% center; }
+    }
+
+    /* Floating Small Fire Particle Base Styles */
+    .silver-fire-particle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      font-size: 0.85rem; /* Small compact size */
+      user-select: none;
+      animation: floatFireParticle 700ms cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      transform-origin: center center;
+    }
+
+    /* Dark Mode Theme: Silver / White Glowing Fire Emojis */
+    html[data-theme="dark"] .silver-fire-particle {
+      filter: grayscale(100%) brightness(3.5) drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+    }
+
+    /* Light Mode Theme: Pure Deep Black Fire Emojis */
+    html[data-theme="light"] .silver-fire-particle {
+      filter: grayscale(100%) brightness(0) drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+    }
+
+    @keyframes floatFireParticle {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.4) rotate(0deg);
+      }
+      40% {
+        opacity: 0.9;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--move-x), var(--move-y)) scale(var(--scale-end)) rotate(var(--rot-end));
+      }
+    }
+
+    /* Card Styling */
+    .card-base {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+      backdrop-filter: blur(8px);
+    }
+    .card-base:hover {
+      border-color: var(--accent-border);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-2px);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      transition: all var(--transition-fast);
+      cursor: pointer;
+      border: 1px solid transparent;
+      font-size: 0.85rem;
+      padding: 0.5rem 0.85rem;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background-color: var(--accent-primary);
+      color: var(--bg-primary);
+      font-weight: 700;
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-primary);
+      border-color: var(--border-strong);
+    }
+    .btn-outline:hover { border-color: var(--accent-border); background-color: var(--accent-soft); }
+    .btn-sm { padding: 0.45rem 0.5rem; font-size: 0.8rem; }
+    .btn-lg { padding: 0.8rem 1.6rem; font-size: 1rem; }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-radius: 0.375rem;
+      font-family: var(--font-mono);
+      font-size: 0.775rem;
+      font-weight: 500;
+      padding: 0.2rem 0.55rem;
+    }
+    .badge-default { background-color: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border-subtle); }
+    .badge-accent { background-color: var(--accent-soft); color: var(--accent-primary); border: 1px solid var(--accent-border); }
+
+    /* Section Header */
+    .section-header { margin-bottom: 2.75rem; }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      color: var(--accent-primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+    .section-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; color: var(--text-primary); }
+    .section-subtitle { margin-top: 0.5rem; font-size: 1rem; color: var(--text-secondary); max-width: 750px; }
+
+    /* Scroll Progress Bar */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: var(--accent-primary);
+      z-index: 101; width: 0%; transition: width 100ms ease-out;
+    }
+
+    /* Header Nav — Dynamic Theme Background */
+    header {
+      position: sticky; top: 0; z-index: 90;
+      background-color: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background-color var(--transition-normal), border-color var(--transition-normal);
+    }
+    .nav-container { display: flex; align-items: center; justify-content: space-between; height: 70px; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-link {
+      font-size: 0.875rem; font-weight: 500; color: var(--text-secondary);
+      padding: 0.5rem 0.2rem; position: relative; transition: color var(--transition-fast);
+    }
+    .nav-link:hover, .nav-link.active { color: var(--text-primary); }
+    .nav-link.active::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: var(--accent-primary); border-radius: 1px;
+    }
+
+    /* Filter Tabs */
+    .filter-tab {
+      padding: 0.45rem 0.95rem;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      border: 1px solid var(--border-subtle);
+      background-color: var(--bg-tertiary);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .filter-tab.active {
+      border-color: var(--accent-primary);
+      background-color: var(--accent-soft);
+      color: var(--accent-primary);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 1.5rem;
+        gap: 1rem;
+        align-items: flex-start;
+        box-shadow: var(--shadow-lg);
+        z-index: 99;
+      }
+      .mobile-toggle-btn { display: flex !important; }
+      #heroGrid { grid-template-columns: 1fr !important; }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-toggle-btn { display: none !important; }
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px); z-index: 100; display: none;
+      align-items: center; justify-content: center; padding: 1.5rem;
+    }
+    .modal-overlay.active { display: flex; animation: fadeIn 250ms ease-out; }
+    .modal-content {
+      background: var(--bg-secondary); border: 1px solid var(--border-strong);
+      border-radius: 1rem; max-width: 750px; width: 100%; max-height: 90vh;
+      overflow-y: auto; box-shadow: var(--shadow-lg); animation: scaleUp 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Toast Alert */
+    .toast-banner {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+      display: none; align-items: center; gap: 0.75rem; padding: 0.85rem 1.25rem;
+      background: var(--bg-secondary); color: var(--text-primary);
+      border: 1px solid var(--border-strong); border-radius: 0.5rem; box-shadow: var(--shadow-lg);
+    }
+    .toast-banner.active { display: flex; animation: fadeIn 200ms ease-out; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes scaleUp { from { opacity: 0; transform: scale(0.95) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Sticky Navbar -->
+  <header>
+    <div class="container nav-container">
+      
+      <!-- Brand Name with Interactive Dynamic Fire Emoji Particles Hover Animation -->
+      <a href="#home" class="brand-link" id="brandHeaderLink">
+        <div class="brand-logo-badge" style="width: 34px; height: 34px; border-radius: 0.5rem; background: var(--accent-soft); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; color: var(--text-primary); font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; transition: all var(--transition-fast);">
+          BS
+        </div>
+        <span class="brand-text" style="color: var(--text-primary); transition: color var(--transition-fast);">Bhuvan Sai</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Right Action Tools: Theme Toggle + Mobile Menu Toggle -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle Light/Dark Theme" style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); color: var(--text-primary); cursor: pointer; width: 40px; height: 40px; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; transition: all var(--transition-fast);">
+          <span id="themeIcon" style="display: flex; align-items: center; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuToggle" onclick="toggleMobileMenu(event)" aria-label="Toggle navigation menu" title="Menu" class="mobile-toggle-btn" style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); color: var(--text-primary); cursor: pointer; width: 40px; height: 40px; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="section-padding" style="padding-top: 3.5rem;">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center;" id="heroGrid">
+          <div>
+            <div style="margin-bottom: 1.25rem;">
+              <span class="badge badge-accent">
+                ✨ B.Tech Artificial Intelligence & Machine Learning Student (Expected 2028)
+              </span>
+            </div>
+
+            <h1 style="font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem;">
+              Hi, I'm Bhuvan Sai.
+            </h1>
+
+            <p style="font-family: var(--font-mono); font-size: clamp(1rem, 2vw, 1.2rem); color: var(--accent-primary); font-weight: 600; margin-bottom: 1.25rem;">
+              AI/ML Enthusiast · Data Science · Full-Stack Developer · Agentic AI
+            </p>
+
+            <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.65; max-width: 650px; margin-bottom: 2rem;">
+              Third-year B.Tech student in Artificial Intelligence and Machine Learning at R.M.D. Engineering College. Hands-on experience in machine learning, data analytics, and Generative AI. Proficient in Python and SQL, with practical exposure to FastAPI, REST APIs, LLMs, RAG, and Agentic AI.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+              <a href="#projects" class="btn btn-primary btn-lg">View Projects →</a>
+              <a href="#contact" class="btn btn-outline btn-lg">Let's Connect</a>
+              
+              <div style="display: flex; gap: 0.5rem; margin-left: 0.5rem;">
+                <a href="https://github.com/BhuvanSai124" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/bhuvan-chintalapati-b16476415/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" aria-label="LinkedIn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Canvas — Pure Deep Black Node Animation -->
+          <div style="position: relative; width: 100%; height: 360px; background: #000000; border-radius: 1rem; border: 1px solid var(--border-strong); overflow: hidden; box-shadow: var(--shadow-lg);">
+            <canvas id="nodeCanvas" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.75;"></canvas>
+            
+            <div style="position: absolute; top: 1rem; left: 1.25rem; right: 1.25rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
+              <div style="display: flex; gap: 0.4rem;">
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #444444;"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #777777;"></div>
+                <div style="width: 10px; height: 10px; border-radius: 50%; background: #aaaaaa;"></div>
+              </div>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">agentic_workflow.py — (Visual Concept)</span>
+            </div>
+
+            <div style="position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; background: rgba(10,10,10,0.92); border: 1px solid var(--border-subtle); border-radius: 0.625rem; padding: 1rem; font-family: var(--font-mono); font-size: 0.785rem; line-height: 1.5; color: var(--code-text); backdrop-filter: blur(8px);">
+              <div style="color: #ffffff;"><span style="color: #a1a1aa;">from</span> fastapi <span style="color: #a1a1aa;">import</span> FastAPI</div>
+              <div style="color: #ffffff;"><span style="color: #a1a1aa;">from</span> sklearn.pipeline <span style="color: #a1a1aa;">import</span> Pipeline</div>
+              <div style="color: #71717a; margin: 0.25rem 0;"># Agentic AI & Local ML Analytics Engine</div>
+              <div><span style="color: #e4e4e7;">@app.post</span>(<span style="color: #a1a1aa;">"/api/v1/predict"</span>)</div>
+              <div><span style="color: #e4e4e7;">async def</span> <span style="color: #ffffff;">run_analytics</span>(data: IngestionData):</div>
+              <div style="padding-left: 1.25rem; color: #d4d4d8;">model = load_scikit_pipeline()</div>
+              <div style="padding-left: 1.25rem; color: #d4d4d8;">insights = await agent.evaluate(data, model)</div>
+              <div style="padding-left: 1.25rem; color: #ffffff;">return &#123; "status": "success", "result": insights &#125;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK CARDS -->
+    <section style="padding-bottom: 3rem;">
+      <div class="container">
+        <div class="grid-4">
+          <div class="card-base" style="display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.25rem;">
+            <div style="width: 42px; height: 42px; border-radius: 0.5rem; background: var(--accent-soft); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; color: var(--text-primary); flex-shrink: 0; font-size: 1.2rem;">🧠</div>
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; display: block;">Focus</span>
+              <span style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-top: 0.15rem; display: block;">AI / ML / Data Science</span>
+            </div>
+          </div>
+
+          <div class="card-base" style="display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.25rem;">
+            <div style="width: 42px; height: 42px; border-radius: 0.5rem; background: var(--accent-soft); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; color: var(--text-primary); flex-shrink: 0; font-size: 1.2rem;">✨</div>
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; display: block;">Currently Learning</span>
+              <span style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-top: 0.15rem; display: block;">Agentic AI / MLOps / Cloud</span>
+            </div>
+          </div>
+
+          <div class="card-base" style="display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.25rem;">
+            <div style="width: 42px; height: 42px; border-radius: 0.5rem; background: var(--accent-soft); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; color: var(--text-primary); flex-shrink: 0; font-size: 1.2rem;">💻</div>
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; display: block;">Development</span>
+              <span style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-top: 0.15rem; display: block;">Full-Stack AI Applications</span>
+            </div>
+          </div>
+
+          <div class="card-base" style="display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.25rem;">
+            <div style="width: 42px; height: 42px; border-radius: 0.5rem; background: var(--accent-border); display: flex; align-items: center; justify-content: center; color: var(--text-primary); flex-shrink: 0; font-size: 1.2rem;">📍</div>
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; display: block;">Location</span>
+              <span style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-top: 0.15rem; display: block;">Nuzvid, AP, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 01</div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">Passionate about turning raw datasets and theoretical machine learning into real-world, production-ready software applications.</p>
+        </div>
+
+        <div class="grid-2" style="align-items: start; gap: 2.5rem;">
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <p style="font-size: 1.05rem; line-height: 1.75; color: var(--text-secondary);">
+              I am a third-year B.Tech student in <strong>Artificial Intelligence and Machine Learning</strong> at <strong>R.M.D. Engineering College</strong>. My technical focus centers on practical machine learning, data engineering, RESTful API architecture, and full-stack software development.
+            </p>
+            <p style="font-size: 1.05rem; line-height: 1.75; color: var(--text-secondary);">
+              Instead of relying strictly on theoretical exercises, I prioritize building end-to-end applications — from ingesting structured data, engineering features, and training Scikit-Learn models to deploying FastAPI services containerized with Docker on cloud platforms.
+            </p>
+
+            <div style="padding: 1.25rem; background: var(--bg-tertiary); border-radius: 0.75rem; border-left: 4px solid var(--accent-primary); margin-top: 0.5rem;">
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-primary); font-weight: 600; display: block; margin-bottom: 0.35rem;">CORE OBJECTIVE</span>
+              <p style="font-size: 0.95rem; color: var(--text-primary); font-style: italic;">
+                "Seeking AI/ML, Data Science, Data Analytics, and Backend internship opportunities."
+              </p>
+            </div>
+          </div>
+
+          <div class="card-base" style="padding: 1.75rem;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--text-primary);">Development Journey</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 0.25rem 0.6rem; border-radius: 0.375rem;">01</span>
+                <div>
+                  <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary);">Learn</h4>
+                  <p style="font-size: 0.875rem; color: var(--text-secondary);">Forming core mathematical & algorithmic foundations in AI, ML, and Data Science.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 0.25rem 0.6rem; border-radius: 0.375rem;">02</span>
+                <div>
+                  <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary);">Build</h4>
+                  <p style="font-size: 0.875rem; color: var(--text-secondary);">Developing real-world full-stack platforms with Python, Scikit-learn, FastAPI & React.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 0.25rem 0.6rem; border-radius: 0.375rem;">03</span>
+                <div>
+                  <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary);">Deploy</h4>
+                  <p style="font-size: 0.875rem; color: var(--text-secondary);">Containerizing backend services with Docker and deploying to cloud infrastructure.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); border: 1px solid var(--accent-border); padding: 0.25rem 0.6rem; border-radius: 0.375rem;">04</span>
+                <div>
+                  <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary);">Improve</h4>
+                  <p style="font-size: 0.875rem; color: var(--text-secondary);">Refining model accuracy, API performance, data pipelines, and UI experiences.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORATORY FOCUS -->
+    <section style="padding-bottom: 3.5rem;">
+      <div class="container">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 1rem; padding: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+              ✨ Exploratory Focus & Currently Learning
+            </h3>
+            <span style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--text-muted);">
+              ℹ️ Current learning areas separate from verified resume credentials
+            </span>
+          </div>
+
+          <div class="grid-4">
+            <div style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.625rem; border: 1px solid var(--border-subtle);">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Agentic AI Frameworks</h4>
+              <p style="font-size: 0.825rem; color: var(--text-secondary);">Exploring multi-agent orchestration, tool integration, and autonomous reasoning workflows.</p>
+            </div>
+
+            <div style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.625rem; border: 1px solid var(--border-subtle);">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">MLOps Pipelines</h4>
+              <p style="font-size: 0.825rem; color: var(--text-secondary);">Building reproducible model training, version control, and containerized serving pipelines.</p>
+            </div>
+
+            <div style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.625rem; border: 1px solid var(--border-subtle);">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Cloud Infrastructure</h4>
+              <p style="font-size: 0.825rem; color: var(--text-secondary);">Deepening knowledge of Microsoft Azure services, cloud deployments, and backend scalability.</p>
+            </div>
+
+            <div style="padding: 1rem; background: var(--bg-tertiary); border-radius: 0.625rem; border: 1px solid var(--border-subtle);">
+              <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">RAG & LLM Architectures</h4>
+              <p style="font-size: 0.825rem; color: var(--text-secondary);">Investigating contextual document retrieval, vector databases, and prompt optimization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 02</div>
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-subtitle">Categorized inventory of programming languages, frameworks, databases, and cloud tools strictly verified from my resume.</p>
+        </div>
+
+        <!-- Filter Buttons for Skill Categories -->
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.25rem;">
+          <button onclick="filterSkills('all')" class="filter-tab active" data-skill-tab="all">All Categories</button>
+          <button onclick="filterSkills('aiml')" class="filter-tab" data-skill-tab="aiml">AI & ML</button>
+          <button onclick="filterSkills('data')" class="filter-tab" data-skill-tab="data">Data & Analytics</button>
+          <button onclick="filterSkills('web')" class="filter-tab" data-skill-tab="web">Web & Backend</button>
+          <button onclick="filterSkills('cloud')" class="filter-tab" data-skill-tab="cloud">Cloud & MLOps</button>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+          <!-- AI / ML -->
+          <div class="card-base skill-category-card" data-skill-cat="aiml">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: var(--accent-primary); font-family: var(--font-mono);">//</span> AI & Machine Learning
+            </h3>
+            <div class="grid-3">
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Artificial Intelligence</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Core</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Machine Learning</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Applied</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Scikit-Learn</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Framework</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Generative AI</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Practical</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">LLMs & RAG</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Exposure</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Pandas & NumPy</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Data Prep</span></div>
+            </div>
+          </div>
+
+          <!-- Data & Analytics -->
+          <div class="card-base skill-category-card" data-skill-cat="data">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: var(--accent-primary); font-family: var(--font-mono);">//</span> Data & Analytics
+            </h3>
+            <div class="grid-3">
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Data Analytics</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Core</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">SQL</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Queries</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Power BI</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Dashboards</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Tableau</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Visualization</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Excel & Google Sheets</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Reporting</span></div>
+            </div>
+          </div>
+
+          <!-- Web & Backend -->
+          <div class="card-base skill-category-card" data-skill-cat="web">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: var(--accent-primary); font-family: var(--font-mono);">//</span> Web & Backend Development
+            </h3>
+            <div class="grid-3">
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Python</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Primary</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">FastAPI</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Backend API</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">React & JavaScript</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Frontend</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Java</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Language</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">SQLite & SQLAlchemy</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Database/ORM</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">HTML & CSS</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Web</span></div>
+            </div>
+          </div>
+
+          <!-- Cloud & Tools -->
+          <div class="card-base skill-category-card" data-skill-cat="cloud">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: var(--accent-primary); font-family: var(--font-mono);">//</span> Cloud, MLOps & Developer Tools
+            </h3>
+            <div class="grid-3">
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Microsoft Azure</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Cloud</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Docker</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">Containers</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">Git & GitHub</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">VCS</span></div>
+              <div style="display: flex; justify-content: space-between; padding: 0.6rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem;"><span style="font-size: 0.9rem; font-weight: 600;">VS Code & Jupyter</span><span class="font-mono" style="font-size: 0.725rem; color: var(--text-muted); background: var(--bg-primary); padding: 0.15rem 0.4rem; border-radius: 0.25rem;">IDE</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 03</div>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Production-oriented AI, Machine Learning, and Full-Stack platforms developed with FastAPI, React, Python, and local-first ML architectures.</p>
+        </div>
+
+        <!-- Category Filter Tabs for Projects -->
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.25rem;">
+          <button onclick="filterProjects('all')" class="filter-tab active" data-proj-tab="all">All Projects</button>
+          <button onclick="filterProjects('aiml')" class="filter-tab" data-proj-tab="aiml">AI / ML</button>
+          <button onclick="filterProjects('fullstack')" class="filter-tab" data-proj-tab="fullstack">Full Stack</button>
+          <button onclick="filterProjects('analytics')" class="filter-tab" data-proj-tab="analytics">Data Science</button>
+        </div>
+
+        <div class="grid-3" style="align-items: stretch; gap: 1.75rem;">
+          
+          <!-- PROJECT 1: IPLYTICS AI -->
+          <div class="card-base project-card" data-proj-cat="aiml" style="display: flex; flex-direction: column; height: 100%; border-color: var(--border-strong); box-shadow: var(--shadow-glow);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span class="font-mono" style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); padding: 0.2rem 0.5rem; border-radius: 0.375rem;">01</span>
+                <span class="badge badge-accent">AI/ML</span>
+              </div>
+              <span class="badge badge-accent">✨ Featured</span>
+            </div>
+
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.25rem;">IPLYTICS AI</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.85rem;">Cricket Match Prediction & Analytics Platform</p>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem; flex-grow: 1;">
+              An IPL analytics and AI prediction platform combining historical cricket data analysis, machine learning algorithms, and an interactive web interface to explore match trends and generate predictive insights.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;">
+              <span class="badge badge-default">Python</span>
+              <span class="badge badge-default">FastAPI</span>
+              <span class="badge badge-default">SQL</span>
+              <span class="badge badge-default">Scikit-Learn</span>
+              <span class="badge badge-default">Docker</span>
+              <span class="badge badge-default">Render</span>
+            </div>
+
+            <!-- Single Line Aligned Action Buttons -->
+            <div style="display: flex; align-items: center; gap: 0.4rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); width: 100%;">
+              <button onclick="openModal('modal-iplytics')" class="btn btn-primary btn-sm" style="flex: 1; white-space: nowrap; justify-content: center;">Case Study</button>
+              <a href="https://github.com/BhuvanSai124/IPL-anlaytics" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="flex: 1; white-space: nowrap; justify-content: center;">GitHub</a>
+              <a href="https://ipl-analytics-dashboard-ioh7.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="flex: 1; white-space: nowrap; justify-content: center;">Live Demo 🔗</a>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: FINPILOT AI -->
+          <div class="card-base project-card" data-proj-cat="fullstack" style="display: flex; flex-direction: column; height: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span class="font-mono" style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); padding: 0.2rem 0.5rem; border-radius: 0.375rem;">02</span>
+                <span class="badge badge-default">Full Stack</span>
+              </div>
+            </div>
+
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.25rem;">FinPilot AI</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.85rem;">Full-Stack Financial Learning & Analytics Platform</p>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem; flex-grow: 1;">
+              A full-stack AI-oriented financial learning and analysis platform designed to help users understand financial concepts, explore market-related information, and interact with structured financial data.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;">
+              <span class="badge badge-default">React</span>
+              <span class="badge badge-default">FastAPI</span>
+              <span class="badge badge-default">SQLite</span>
+              <span class="badge badge-default">SQLAlchemy</span>
+              <span class="badge badge-default">JWT Auth</span>
+            </div>
+
+            <!-- Single Line Aligned Action Buttons -->
+            <div style="display: flex; align-items: center; gap: 0.4rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); width: 100%;">
+              <button onclick="openModal('modal-finpilot')" class="btn btn-primary btn-sm" style="flex: 1; white-space: nowrap; justify-content: center;">Case Study</button>
+              <a href="https://github.com/BhuvanSai124/Fin-Pilot" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="flex: 1; white-space: nowrap; justify-content: center;">GitHub</a>
+              <a href="https://finpilot-stocks.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="flex: 1; white-space: nowrap; justify-content: center;">Live Demo 🔗</a>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: INSIGHT AI -->
+          <div class="card-base project-card" data-proj-cat="analytics" style="display: flex; flex-direction: column; height: 100%;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span class="font-mono" style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); padding: 0.2rem 0.5rem; border-radius: 0.375rem;">03</span>
+                <span class="badge badge-default">Data Science</span>
+              </div>
+            </div>
+
+            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.25rem;">Insight AI</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.85rem;">Offline-Capable, Local-First AI Analytics Platform</p>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem; flex-grow: 1;">
+              An offline-capable, local-first AI data analyst platform supporting CSV, XLSX, and JSON ingestion. Local-first processing with no external LLM API dependency.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;">
+              <span class="badge badge-default">Python</span>
+              <span class="badge badge-default">FastAPI</span>
+              <span class="badge badge-default">Scikit-Learn</span>
+              <span class="badge badge-default">SQLite</span>
+              <span class="badge badge-default">Local-First</span>
+            </div>
+
+            <!-- Single Line Aligned Action Buttons -->
+            <div style="display: flex; align-items: center; gap: 0.4rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); width: 100%;">
+              <button onclick="openModal('modal-insight')" class="btn btn-primary btn-sm" style="flex: 1; white-space: nowrap; justify-content: center;">Case Study</button>
+              <a href="https://github.com/BhuvanSai124/InSight-AI" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="flex: 1; white-space: nowrap; justify-content: center;">GitHub</a>
+              <a href="https://insightt-ai.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="flex: 1; white-space: nowrap; justify-content: center;">Live Demo 🔗</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center; padding: 2rem; background: var(--bg-card); border-radius: 1rem; border: 1px solid var(--border-subtle);">
+          <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Explore repositories & open-source code</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem;">Browse additional analytics scripts and experiments on GitHub.</p>
+          <a href="https://github.com/BhuvanSai124" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-md">Explore more on GitHub →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 04</div>
+          <h2 class="section-title">Practical Experience</h2>
+          <p class="section-subtitle">Verified internship role where I applied data analytics, SQL, Python, and BI tools to streamline reporting workflows.</p>
+        </div>
+
+        <div style="max-width: 850px; margin: 0 auto;">
+          <div class="card-base">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary);">Data Analyst Intern — Sun Square Pvt. Ltd.</h3>
+                <span style="font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">Internship Role</span>
+              </div>
+              <span class="font-mono" style="font-size: 0.8rem; color: var(--text-muted); background: var(--bg-tertiary); padding: 0.2rem 0.5rem; border-radius: 0.375rem;">1 Month | India</span>
+            </div>
+
+            <ul style="padding-left: 1.2rem; margin: 0.85rem 0; color: var(--text-secondary); font-size: 0.95rem;">
+              <li style="margin-bottom: 0.4rem;">Analyzed and processed analytical datasets using Python and SQL to extract actionable business insights.</li>
+              <li style="margin-bottom: 0.4rem;">Developed interactive dashboards and visualizations in Power BI and Tableau for reporting and decision support.</li>
+              <li style="margin-bottom: 0.4rem;">Streamlined spreadsheet-based reporting workflows using Excel and Google Sheets to support cross-team analysis.</li>
+            </ul>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1rem;">
+              <span class="badge badge-default">Python</span>
+              <span class="badge badge-default">SQL</span>
+              <span class="badge badge-default">Power BI</span>
+              <span class="badge badge-default">Tableau</span>
+              <span class="badge badge-default">Excel</span>
+              <span class="badge badge-default">Google Sheets</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 05</div>
+          <h2 class="section-title">Certifications</h2>
+          <p class="section-subtitle">Official industry certifications in Oracle Cloud Infrastructure, Generative AI, Data Science, Agentic AI, and Software Skills.</p>
+        </div>
+
+        <div class="grid-3" style="align-items: stretch;">
+          <div class="card-base">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Oracle AI Database SQL Certified Associate</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.85rem;">Oracle (2025)</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;"><span class="badge badge-default">Oracle SQL</span><span class="badge badge-default">AI Database</span></div>
+          </div>
+
+          <div class="card-base">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.85rem;">Oracle (2025)</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;"><span class="badge badge-default">Generative AI</span><span class="badge badge-default">OCI</span></div>
+          </div>
+
+          <div class="card-base">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Oracle Cloud Infrastructure 2025 Certified Data Science Professional</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.85rem;">Oracle (2025)</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;"><span class="badge badge-default">Data Science</span><span class="badge badge-default">OCI ML</span></div>
+          </div>
+
+          <div class="card-base">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Oracle APEX Cloud Developer Certified Professional</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.85rem;">Oracle (2025)</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;"><span class="badge badge-default">Oracle APEX</span><span class="badge badge-default">Low-Code</span></div>
+          </div>
+
+          <div class="card-base">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Agentic AI Certified Foundations Associate</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.85rem;">Agentic AI Council (2025)</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;"><span class="badge badge-default">Agentic AI</span><span class="badge badge-default">Agents</span></div>
+          </div>
+
+          <div class="card-base">
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.35rem;">Claude 101 & Soft Skills — IIT Madras (NPTEL)</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 0.85rem;">Anthropic & IIT Madras</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;"><span class="badge badge-default">Claude API</span><span class="badge badge-default">NPTEL</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 06</div>
+          <h2 class="section-title">Education Timeline</h2>
+          <p class="section-subtitle">Academic foundation in Artificial Intelligence, Machine Learning, and Computer Science.</p>
+        </div>
+
+        <div style="max-width: 850px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="card-base">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+              <div>
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">B.Tech in Artificial Intelligence & Machine Learning</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">R.M.D. Engineering College</p>
+              </div>
+              <span class="font-mono" style="font-size: 0.825rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); padding: 0.2rem 0.6rem; border-radius: 0.375rem; height: fit-content;">CGPA: 8.2 / 10</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Expected 2028 | III Year</p>
+          </div>
+
+          <div class="card-base">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+              <div>
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">Class XII — Higher Secondary Education (MPC)</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">Intermediate / High School Board</p>
+              </div>
+              <span class="font-mono" style="font-size: 0.825rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); padding: 0.2rem 0.6rem; border-radius: 0.375rem; height: fit-content;">Class XII: 96%</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">2022 – 2024 | Completed</p>
+          </div>
+
+          <div class="card-base">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+              <div>
+                <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-primary);">Class X — Secondary School Certificate</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); font-weight: 500;">Secondary School Board</p>
+              </div>
+              <span class="font-mono" style="font-size: 0.825rem; font-weight: 700; color: var(--text-primary); background: var(--accent-soft); padding: 0.2rem 0.6rem; border-radius: 0.375rem; height: fit-content;">Class X: 93.6%</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">2021 – 2022 | Completed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME CTA SECTION WITH UNIVERSAL COMPATIBILITY -->
+    <section style="padding-bottom: 4rem;">
+      <div class="container">
+        <div style="background: var(--bg-card); border: 1px solid var(--accent-border); border-radius: 1rem; padding: 2.5rem; text-align: center; box-shadow: var(--shadow-glow);">
+          <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.5rem;">Want to know more about my journey?</h2>
+          <p style="font-size: 1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 1.5rem auto;">Access my verified resume detailing my technical skill inventory, academic records, internship experience, and full-stack AI projects.</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <button onclick="openModal('modal-resume')" class="btn btn-primary btn-lg">👁️ View Resume</button>
+            <a href="Bhuvan_Sai_Resume.pdf" target="_blank" download="Chintalapati_Bhuvan_Sai_Resume.pdf" class="btn btn-outline btn-lg">📥 Download Resume PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">// 07</div>
+          <h2 class="section-title">Let's Build Something</h2>
+          <p class="section-subtitle">For internship opportunities, project collaborations, or technical discussions, feel free to reach out.</p>
+        </div>
+
+        <div class="grid-2" style="gap: 2.5rem; align-items: start;">
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="card-base" style="padding: 1.75rem;">
+              <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1.25rem;">Contact Details</h3>
+              <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                  <div>
+                    <span class="font-mono" style="font-size: 0.75rem; color: var(--text-muted); display: block;">EMAIL</span>
+                    <a href="mailto:bhuvanchintalapati2007@gmail.com" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">bhuvanchintalapati2007@gmail.com</a>
+                  </div>
+                  <button onclick="copyEmail()" class="btn btn-outline btn-sm">Copy Email</button>
+                </div>
+                <div>
+                  <span class="font-mono" style="font-size: 0.75rem; color: var(--text-muted); display: block;">PHONE</span>
+                  <span style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">+91 6301919628</span>
+                </div>
+                <div>
+                  <span class="font-mono" style="font-size: 0.75rem; color: var(--text-muted); display: block;">LOCATION</span>
+                  <span style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Nuzvid, Andhra Pradesh, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-base" style="padding: 1.75rem;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1.25rem;">Send a Message</h3>
+            <form id="contactForm" onsubmit="handleFormSubmit(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+              <div>
+                <label class="font-mono" style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 0.35rem;">Your Name *</label>
+                <input type="text" id="formName" required placeholder="Alex Smith" style="width: 100%; padding: 0.65rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem; color: var(--text-primary);">
+              </div>
+              <div>
+                <label class="font-mono" style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 0.35rem;">Your Email *</label>
+                <input type="email" id="formEmail" required placeholder="alex@company.com" style="width: 100%; padding: 0.65rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem; color: var(--text-primary);">
+              </div>
+              <div>
+                <label class="font-mono" style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 0.35rem;">Message *</label>
+                <textarea id="formMessage" rows="4" required placeholder="Write your message..." style="width: 100%; padding: 0.65rem 0.85rem; background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: 0.5rem; color: var(--text-primary); resize: vertical;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-md">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER WITH GITHUB & LINKEDIN SYMBOLS -->
+  <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); padding: 3rem 0 2rem 0;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 800;">Chintalapati Bhuvan Sai</h3>
+          <p class="font-mono" style="font-size: 0.85rem; color: var(--text-muted);">AI/ML · Data Science · Full-Stack · Agentic AI</p>
+        </div>
+        
+        <!-- Social Links with SVG Icons Beside Text -->
+        <div style="display: flex; gap: 1.25rem; align-items: center;">
+          <a href="https://github.com/BhuvanSai124" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/bhuvan-chintalapati-b16476415/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-secondary); font-weight: 500; font-size: 0.9rem; transition: color var(--transition-fast);" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-secondary)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; font-size: 0.85rem; color: var(--text-muted);">
+        <p>© 2026 Bhuvan Sai. Built with curiosity and code.</p>
+        <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="background: none; border: none; color: var(--text-primary); cursor: pointer; font-family: var(--font-mono);">Back to top ↑</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  <div class="modal-overlay" id="modal-iplytics" onclick="closeModalOnOverlay(event, 'modal-iplytics')">
+    <div class="modal-content" style="padding: 1.75rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h3 style="font-size: 1.25rem; font-weight: 700;">IPLYTICS AI — Case Study</h3>
+        <button onclick="closeModal('modal-iplytics')" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.25rem;">✕</button>
+      </div>
+      <p style="color: var(--text-secondary); font-weight: 600; margin-bottom: 1rem;">Cricket Match Prediction & Analytics Platform</p>
+      <div style="padding: 1rem; background: var(--code-bg); color: var(--code-text); border-radius: 0.5rem; font-family: var(--font-mono); font-size: 0.825rem; margin-bottom: 1rem;">
+        Frontend (HTML/CSS/JS) → FastAPI REST Endpoints → Python ML Engine & SQL Data Layer → Docker / Render Cloud Deployment
+      </div>
+      <p style="margin-bottom: 1rem; font-size: 0.9rem;">Built a machine-learning-based IPL analytics and prediction platform leveraging historical cricket data for query-driven analytics. Backend containerized with Docker and deployed live on Render.</p>
+      <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+        <a href="https://github.com/BhuvanSai124/IPL-anlaytics" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repository</a>
+        <a href="https://ipl-analytics-dashboard-ioh7.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Launch Live Demo 🔗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-finpilot" onclick="closeModalOnOverlay(event, 'modal-finpilot')">
+    <div class="modal-content" style="padding: 1.75rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h3 style="font-size: 1.25rem; font-weight: 700;">FinPilot AI — Case Study</h3>
+        <button onclick="closeModal('modal-finpilot')" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.25rem;">✕</button>
+      </div>
+      <p style="color: var(--text-secondary); font-weight: 600; margin-bottom: 1rem;">Full-Stack Financial Learning & Analytics Platform</p>
+      <div style="padding: 1rem; background: var(--code-bg); color: var(--code-text); border-radius: 0.5rem; font-family: var(--font-mono); font-size: 0.825rem; margin-bottom: 1rem;">
+        React Frontend → FastAPI REST Router → SQLite Database with SQLAlchemy ORM + JWT Auth
+      </div>
+      <p style="margin-bottom: 1rem; font-size: 0.9rem;">Implemented secure user authentication with password hashing and JWT sessions to protect personal financial dashboards, calculation modules, and visual charts.</p>
+      <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+        <a href="https://github.com/BhuvanSai124/Fin-Pilot" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repository</a>
+        <a href="https://finpilot-stocks.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Launch Live Demo 🔗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-insight" onclick="closeModalOnOverlay(event, 'modal-insight')">
+    <div class="modal-content" style="padding: 1.75rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h3 style="font-size: 1.25rem; font-weight: 700;">Insight AI — Case Study</h3>
+        <button onclick="closeModal('modal-insight')" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.25rem;">✕</button>
+      </div>
+      <p style="color: var(--text-secondary); font-weight: 600; margin-bottom: 1rem;">Offline-Capable, Local-First AI Analytics Platform</p>
+      <div style="padding: 1rem; background: var(--code-bg); color: var(--code-text); border-radius: 0.5rem; font-family: var(--font-mono); font-size: 0.825rem; margin-bottom: 1rem;">
+        React Data Ingestion → Local FastAPI Service → Scikit-Learn ML Pipelines & Rule-Based Heuristics (Zero external API dependency)
+      </div>
+      <p style="margin-bottom: 1rem; font-size: 0.9rem;">Supports CSV, XLSX, and JSON ingestion. Keeps all data processing 100% on-device for privacy-conscious data exploration and machine learning model evaluation.</p>
+      <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+        <a href="https://github.com/BhuvanSai124/InSight-AI" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub Repository</a>
+        <a href="https://insightt-ai.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Launch Live Demo 🔗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BULLETPROOF UNIVERSAL RESUME VIEWER MODAL -->
+  <div class="modal-overlay" id="modal-resume" onclick="closeModalOnOverlay(event, 'modal-resume')">
+    <div class="modal-content" style="padding: 1.75rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h3 style="font-size: 1.25rem; font-weight: 700;">Resume Viewer — Bhuvan Sai</h3>
+        <button onclick="closeModal('modal-resume')" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.25rem;">✕</button>
+      </div>
+      
+      <!-- Multi-Layer PDF Container (Object -> iFrame -> Fallback) -->
+      <div style="width: 100%; height: 500px; background: var(--code-bg); border-radius: 0.5rem; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border-subtle); position: relative;">
+        <object data="Bhuvan_Sai_Resume.pdf" type="application/pdf" width="100%" height="100%">
+          <iframe id="resumeViewerFrame" src="Bhuvan_Sai_Resume.pdf" style="width: 100%; height: 100%; border: none;" title="Resume PDF Preview">
+            <div style="padding: 2.5rem; text-align: center; color: var(--text-secondary);">
+              <p style="margin-bottom: 1rem; font-size: 1rem;">Your browser requires opening PDFs directly in a tab.</p>
+              <a href="Bhuvan_Sai_Resume.pdf" target="_blank" class="btn btn-primary btn-md">Click Here to Open Resume PDF ↗</a>
+            </div>
+          </iframe>
+        </object>
+      </div>
+
+      <!-- Action Footer with Direct Tab Open + Forced Download -->
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; padding-top: 0.5rem;">
+        <div style="display: flex; gap: 0.5rem;">
+          <a href="Bhuvan_Sai_Resume.pdf" target="_blank" class="btn btn-outline btn-sm">📄 Open PDF in New Tab ↗</a>
+        </div>
+        <a href="Bhuvan_Sai_Resume.pdf" target="_blank" download="Chintalapati_Bhuvan_Sai_Resume.pdf" class="btn btn-primary btn-sm">📥 Download PDF Document</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Alert -->
+  <div class="toast-banner" id="toast">
+    <span id="toastMsg">Notification message</span>
+  </div>
+
+  <!-- Defensive Pure Vanilla JS Script -->
+  <script>
+    // SVGs for Theme Toggle
+    const sunIconSVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
+    const moonIconSVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+
+    // Safe Storage Wrappers (prevents crashes in restricted file:// or local browser modes)
+    function getStoredTheme() {
+      try {
+        return localStorage.getItem('theme') || 'dark';
+      } catch (e) {
+        return 'dark';
+      }
+    }
+    function setStoredTheme(theme) {
+      try {
+        localStorage.setItem('theme', theme);
+      } catch (e) {}
+    }
+
+    // Theme Toggle Handler
+    let currentTheme = getStoredTheme();
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      const iconEl = document.getElementById('themeIcon');
+      if (iconEl) {
+        iconEl.innerHTML = theme === 'dark' ? sunIconSVG : moonIconSVG;
+      }
+      setStoredTheme(theme);
+    }
+    applyTheme(currentTheme);
+
+    function toggleTheme() {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(currentTheme);
+    }
+
+    // Mobile Hamburger Menu Toggle
+    function toggleMobileMenu(e) {
+      if (e) e.stopPropagation();
+      const navLinks = document.getElementById('navLinks');
+      if (navLinks) {
+        navLinks.classList.toggle('mobile-open');
+      }
+    }
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks) navLinks.classList.remove('mobile-open');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      const navLinks = document.getElementById('navLinks');
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      if (navLinks && mobileBtn && !navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
+        navLinks.classList.remove('mobile-open');
+      }
+    });
+
+    // Interactive Small Silver/Black Fire Particle Burst Cursor Trail on "Bhuvan Sai" Brand Name
+    const brandHeaderLink = document.getElementById('brandHeaderLink');
+    if (brandHeaderLink) {
+      let lastParticleTime = 0;
+
+      function spawnSilverFireParticle(x, y) {
+        const particle = document.createElement('span');
+        particle.className = 'silver-fire-particle';
+        particle.innerText = '🔥'; // Strictly fire emoji only
+        
+        const offsetX = (Math.random() - 0.5) * 14;
+        const offsetY = (Math.random() - 0.5) * 8;
+        
+        particle.style.left = (x + offsetX) + 'px';
+        particle.style.top = (y + offsetY) + 'px';
+        
+        const scaleEnd = (0.4 + Math.random() * 0.4).toFixed(2); // Small compact scale (0.4 - 0.8)
+        const rotEnd = Math.floor((Math.random() - 0.5) * 45) + 'deg';
+        const moveX = Math.floor((Math.random() - 0.5) * 35) + 'px';
+        const moveY = Math.floor(-20 - Math.random() * 35) + 'px';
+        
+        particle.style.setProperty('--scale-end', scaleEnd);
+        particle.style.setProperty('--rot-end', rotEnd);
+        particle.style.setProperty('--move-x', moveX);
+        particle.style.setProperty('--move-y', moveY);
+        
+        document.body.appendChild(particle);
+
+        setTimeout(() => {
+          if (particle.parentNode) {
+            particle.parentNode.removeChild(particle);
+          }
+        }, 700);
+      }
+
+      brandHeaderLink.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastParticleTime > 35) { // Spawns small fire emoji every 35ms on mouse movement
+          spawnSilverFireParticle(e.clientX, e.clientY);
+          lastParticleTime = now;
+        }
+      });
+
+      brandHeaderLink.addEventListener('mouseenter', (e) => {
+        const rect = brandHeaderLink.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        for (let i = 0; i < 8; i++) {
+          setTimeout(() => {
+            spawnSilverFireParticle(centerX + (Math.random() - 0.5) * rect.width, centerY + (Math.random() - 0.5) * 10);
+          }, i * 30);
+        }
+      });
+    }
+
+    // Scroll Progress & Active Nav Link Observer
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      const progressEl = document.getElementById('scrollProgress');
+      if (progressEl) progressEl.style.width = scrolled + '%';
+
+      // Active Section Highlighting
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'certifications', 'education', 'contact'];
+      const scrollPos = window.scrollY + 200;
+
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollPos) {
+          document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+
+    // Skills Category Filter Tabs
+    function filterSkills(cat) {
+      document.querySelectorAll('[data-skill-tab]').forEach(tab => {
+        tab.classList.toggle('active', tab.getAttribute('data-skill-tab') === cat);
+      });
+
+      document.querySelectorAll('.skill-category-card').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-skill-cat') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Projects Category Filter Tabs
+    function filterProjects(cat) {
+      document.querySelectorAll('[data-proj-tab]').forEach(tab => {
+        tab.classList.toggle('active', tab.getAttribute('data-proj-tab') === cat);
+      });
+
+      document.querySelectorAll('.project-card').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-proj-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Control Functions
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('active');
+        document.body.style.overflow = 'unset';
+      }
+    }
+    function closeModalOnOverlay(e, id) {
+      if (e.target.id === id) {
+        closeModal(id);
+      }
+    }
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(m => {
+          m.classList.remove('active');
+        });
+        document.body.style.overflow = 'unset';
+      }
+    });
+
+    // Toast Alerts
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      if (toast && toastMsg) {
+        toastMsg.innerText = msg;
+        toast.classList.add('active');
+        setTimeout(() => toast.classList.remove('active'), 3500);
+      }
+    }
+
+    function copyEmail() {
+      try {
+        navigator.clipboard.writeText('bhuvanchintalapati2007@gmail.com');
+      } catch(e) {}
+      showToast('Email address copied to clipboard! (bhuvanchintalapati2007@gmail.com)');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      showToast('Thank you! Your message has been sent successfully.');
+      document.getElementById('contactForm').reset();
+    }
+
+    // Interactive Floating Node Canvas Visual — Pure White & Silver Particle Nodes on Black
+    const canvas = document.getElementById('nodeCanvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      function resizeCanvas() {
+        if (canvas.parentElement) {
+          canvas.width = canvas.parentElement.clientWidth;
+          canvas.height = 360;
+        }
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      const nodes = Array.from({ length: 24 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.65,
+        vy: (Math.random() - 0.5) * 0.65
+      }));
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < nodes.length; i++) {
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[i].x - nodes[j].x;
+            const dy = nodes[i].y - nodes[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 115) {
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.strokeStyle = `rgba(255, 255, 255, ${0.3 * (1 - dist / 115)})`;
+              ctx.stroke();
+            }
+          }
+        }
+        nodes.forEach(n => {
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+          if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+          ctx.beginPath(); ctx.arc(n.x, n.y, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffffff'; ctx.fill();
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+  </script>
+</body>
+</html>
